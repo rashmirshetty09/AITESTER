@@ -1,0 +1,5 @@
+com\ricepot\tests\ValidLoginTest.class
+com\ricepot\base\BaseTest.class
+com\ricepot\core\DriverFactory.class
+com\ricepot\tests\InvalidLoginTest.class
+com\ricepot\utils\ScreenshotUtil.class

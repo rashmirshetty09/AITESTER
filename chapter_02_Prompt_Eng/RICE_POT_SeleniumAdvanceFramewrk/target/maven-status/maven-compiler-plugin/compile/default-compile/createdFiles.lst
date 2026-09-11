@@ -1,0 +1,3 @@
+com\ricepot\pages\LoginPage.class
+com\ricepot\utils\ScreenshotUtil.class
+com\ricepot\utils\WaitUtils.class

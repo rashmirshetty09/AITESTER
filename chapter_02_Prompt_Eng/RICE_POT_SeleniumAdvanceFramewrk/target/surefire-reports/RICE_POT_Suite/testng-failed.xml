@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [RICE_POT_Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="LoginTests(failed)" verbose="0">
+    <classes>
+      <class name="com.ricepot.tests.ValidLoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="afterTest"/>
+          <include name="validLogin"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.ricepot.tests.ValidLoginTest -->
+      <class name="com.ricepot.tests.InvalidLoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="emptyFields"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="beforeTest"/>
+          <include name="invalidCredentials"/>
+        </methods>
+      </class> <!-- com.ricepot.tests.InvalidLoginTest -->
+    </classes>
+  </test> <!-- LoginTests(failed) -->
+</suite> <!-- Failed suite [RICE_POT_Suite] -->

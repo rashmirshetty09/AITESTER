@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -e
+if command -v mvn >/dev/null 2>&1; then
+  mvn "$@"
+  exit $?
+fi
+MAVEN_VERSION=3.9.5
+WRAPPER_DIR="$(dirname "$0")/.mvn/wrapper"
+MAVEN_DIR="$WRAPPER_DIR/apache-maven-$MAVEN_VERSION"
+MVN_BIN="$MAVEN_DIR/bin/mvn"
+if [ ! -x "$MVN_BIN" ]; then
+  mkdir -p "$WRAPPER_DIR"
+  curl -s -L -o "$WRAPPER_DIR/apache-maven.zip" "https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.zip"
+  unzip -q "$WRAPPER_DIR/apache-maven.zip" -d "$WRAPPER_DIR"
+fi
+exec "$MVN_BIN" "$@"
