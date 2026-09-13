@@ -1,0 +1,12 @@
+Section	Detail
+Objective	Verify VWO login page functionality (valid/invalid auth, UI, remember-me, CAPTCHA/MFA detection)
+Scope	In-scope: https://app.vwo.com/#/login elements, session establishment, basic post-login landing verification
+Assumptions	Credentials provided via config or system properties; Chrome + WebDriverManager; CAPTCHA/MFA may block tests
+Test Environment	Java 11+, Maven, Selenium 4.x, TestNG 7.x, WebDriverManager, ChromeDriver
+Deliverables	LoginPage.java; ValidLoginTest.java; InvalidLoginTest.java; pom.xml; testng.xml; config.properties
+Test Strategy	Page Object Model with PageFactory; xpath-only @FindBy; explicit waits (WebDriverWait); no Thread.sleep
+Pass Criteria	Expected UI elements present; successful login shows landing element; invalid flows show error messages
+Fail Criteria	Unhandled exceptions, missing critical UI elements, CAPTCHA/MFA blocks automation
+Risks	CAPTCHA/MFA; dynamic JS; rate limiting; IP restrictions
+Reporting	Screenshots on failure to target/screenshots; TestNG reports via Surefire
+Next Steps	1) Provide credentials; 2) Run mvn test -Dusername=<user> -Dpassword=<pass>; 3) Review results

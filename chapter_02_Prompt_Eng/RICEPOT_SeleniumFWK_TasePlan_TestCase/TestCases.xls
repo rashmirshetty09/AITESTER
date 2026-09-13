@@ -1,0 +1,13 @@
+TC ID	Title	Priority	Preconditions	Steps	Expected Result
+TC001	Valid Login	High	Valid credentials; no CAPTCHA/MFA	Navigate to URL; enter valid email; enter valid password; click login	Landing dashboard element visible within timeout
+TC002	Remember Me Persists	Medium	Valid credentials	Login with remember-me checked; close browser; reopen and navigate to app URL	User remains authenticated or redirected to landing
+TC003	UI Elements Presence	High	None	Navigate to URL	Email, password, login button, remember-me, forgot-password link present and enabled
+TC004	Invalid Password	High	Valid email	Enter valid email + wrong password; click login	Authentication error shown; remain on login page
+TC005	Empty Username	Medium	None	Leave email blank; enter password; click login	Validation shown; no login
+TC006	Empty Password	Medium	None	Enter email; leave password blank; click login	Validation shown; no login
+TC007	Both Fields Empty	Medium	None	Leave both blank; click login	Required field validations
+TC008	Invalid Email Format	Low	None	Enter malformed email; enter password; click login	Email format validation; no login
+TC009	Injection Payloads	Low	None	Enter SQL/XSS payloads; click login	Inputs sanitized; no script execution; safe error
+TC010	Account Lock / Rate Limit	Low	None	Multiple invalid attempts; observe behavior	Account lock or rate-limit response detected and recorded
+TC011	CAPTCHA/MFA Detection	High (detect)	None	Attempt login; detect presence of CAPTCHA/MFA widgets	Mark test as blocked and capture screenshot
+TC012	Accessibility Quick Check	Low	None	Inspect inputs for labels/ARIA	Inputs have accessible labels or ARIA attributes

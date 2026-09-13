@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="VWO Login Suite">
+  <test name="VWO Login Tests">
+    <classes>
+      <class name="com.vwo.tests.ValidLoginTest"/>
+      <class name="com.vwo.tests.InvalidLoginTest"/>
+    </classes>
+  </test>
+</suite>
